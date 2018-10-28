@@ -1,10 +1,11 @@
 ## GPS Tutorial 
 
-On public forums, such as Arduino, I see great many posts along the lines of 'My GPS does not work'. Most often people connect a GPS to an Arduino,  load up a complete application and finds it does not work, there is no GPS location reported. Sometimes people do a more sensible thing and load one of the simple examples that comes with an Arduino library, but still they find their GPS 'does not work'
+On public forums, such as Arduino, I see great many posts along the lines of 'My GPS does not work'. Most often people connect a GPS to an Arduino,  load up a complete application and find it does not work, there is no GPS location reported. Sometimes people the sensible thing and load one of the simple examples that comes with an Arduino library, but still they find their GPS 'does not work'
 
 The first troubleshooting step is to realise that the GPS will probably only work when it's outside with a good view of the sky. It matters little how much you think you want or need the GPS to work indoors, take it outside.  
 
-If that does not solve your 'not working GPS' try a simple GPS echo program such as listed below. This reads character from the GPS and sends them to the Arduino IDE serial monitor so you can see what the GPS is up to. Remember to take your GPS outdoors. Note that you will need to tell the program what pin numbers you have the GPS TX and GPS RX pins connected to on the Arduino. 
+If that does not solve your 'not working GPS' try a simple GPS echo program such as listed below. This reads character from the GPS and sends them to the Arduino IDE serial monitor so you can see what the GPS is up to. Remember to take your GPS outdoors. 
+#####Note that you will need to tell the program what pin numbers you have the GPS TX and GPS RX pins connected to on the Arduino. 
 
 
     //Simple_SoftwareSerial_GPS_Echo
@@ -37,7 +38,7 @@ If that does not solve your 'not working GPS' try a simple GPS echo program such
      GPSserial.begin(GPSBaud);//start softserial for GPS at defined baud rate
     }
     
-
+<br><br>
 This first printout below is what the GPS output will look like for a GPS that is typical when the has just been turned on;
 
     
@@ -75,7 +76,7 @@ The next thing that should happen is that the GPS starts reporting the time, 11:
     $GPVTG,,,,,,,,,N*30
     $GPGGA,113941.00,,,,,0,00,99.99,,,,,,*69
 
-Within a minute or so most GPS with decent antennas and a good view of the sky should start reporting the position, then output of the position sentences $GPRMC and $GPGGA should look something like this;
+Within a minute or so most GPS with decent antennas and a good view of the sky should then start reporting the position, the content of the position sentences $GPRMC and $GPGGA should look something like this;
     
     $GPRMC,111218.00,A,5133.58788,N,00313.12853,W,0.205,,261018,,,A*61
     $GNGGA,111218.00,5133.58788,N,00313.12853,W,1,06,1.36,241.1,M,49.4,M,,*55
@@ -104,7 +105,7 @@ Check that the Arduino GPS library you are using supports the $GPGN format, the 
 <br><br>
  
 
-###Stuart Robinson
-###www.LoRaTracker.uk
-###October 2018
+##Stuart Robinson
+##www.LoRaTracker.uk
+##October 2018
  
