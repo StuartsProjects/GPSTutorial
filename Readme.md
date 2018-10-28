@@ -39,7 +39,7 @@ If that does not solve your 'not working GPS' try a simple GPS echo program such
     }
     
 <br><br>
-This first printout below is what the GPS output will look like for a GPS that is typical when the has just been turned on;
+This first printout below is what the GPS output will typically look like for a GPS that has just been turned on;
 
     
     $GPTXT,01,01,02,u-blox ag - www.u-blox.com*50
@@ -68,7 +68,9 @@ A few seconds later you should see something like this;
 
 Note that the line reporting the satellites in view, the GPS sentence $GPGSV, has changed from $GPGSV,1,1,00\*79 (meaning no satellites in view)\ to  $GPGSV,1,1,01,03,,,19*73 which shows there is one satellite in view. The satellite is number 03 and the signal strength is 19, which is very weak. To eventually get a good GPS fix you will need several satellites in view with a signal strength of 25+.
 
-The next thing that should happen is that the GPS starts reporting the time, 11:39:41 in this case;
+If the $GPGSV sentence never moves from the no satellites in view output format (see above) then either the GPS is faulty or its antenna is. 
+
+The next thing that should happen is that the GPS starts reporting the time, 11:39:41.00 in this case;
 
     $GPGSV,1,1,01,03,,,25*7C
     $GPGLL,,,,,113940.00,V,N*44
@@ -82,14 +84,14 @@ Within a minute or so most GPS with decent antennas and a good view of the sky s
     $GNGGA,111218.00,5133.58788,N,00313.12853,W,1,06,1.36,241.1,M,49.4,M,,*55
 
 
-Some GPS, particularly the types used in high altitude ballooning that have small ceramic stick antennas or a simple wire, can take 5 minutes or more getting a fix. 
+Some GPS, particularly the types used in high altitude ballooning that have small ceramic stick antennas or a simple wire, can take 5 minutes or more getting a fix. I often see it claimed that (presumably a good) GPS can take many minutes, 15+, to acquire the first fix. I have seen this numerous times and its always been on a GPS with a poor antenna. Its very rare in my experience for a GPS with a good working antenna to take more than one maybe two minutes to get a fix under good conditions (outside with a clear view of the sky) and most often its around 45 seconds or less when started from cold. 
 
 If a GPS is reporting a number of satellites in view such as a $GPGSV  sentence that looks like this (06 satellites in view) but does not get a fix;
 
     $GPGSV,2,1,06,03,79,240,27,11,44,145,30,17,49,291,31,18,34,116,20*78
     $GPGSV,2,2,06,23,26,180,30,32,,,29*4A
 
-Then its either got a poor view of the sky, has a poor antenna or is faulty. There is no magic bit of code that will fix this problem. 
+Then it's either got a poor view of the sky, has a poor antenna or is faulty. There is no magic bit of code that will fix this problem. 
 <br><br>
 ##Note on Ublox GPSs
 
