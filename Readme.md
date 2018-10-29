@@ -92,6 +92,38 @@ If a GPS is reporting a number of satellites in view such as a $GPGSV  sentence 
     $GPGSV,2,2,06,23,26,180,30,32,,,29*4A
 
 Then it's either got a poor view of the sky, has a poor antenna or is faulty. There is no magic bit of code that will fix this problem. 
+
+##Hardware Serial Ports
+If you have an Arduino with additional hardware serial ports such as the ATmega1284P or ATmega 2560 you should use the hardware serial ports for the GPS, the echo code is here;
+
+    //Simple_HardwareSerial_GPS_Echo
+    
+    //Reads characters from a GPS using one of the Arduinos Hardware Serial
+    //port and echos them to the Arduino Serial Monitor at 115200 baud.   
+    
+    //Define the hardware serial port and the baud rate the GPS is using below, 9600 baud is common.
+        
+    #include <Arduino.h>
+    
+    #define GPSserial Serial1           //define hardware serial port the GPS is connected to, can be Serial1, Serial2, Serial3 or Serial4
+    #define GPSBaud 9600                //GPS Baud rate
+    #define Serial_Monitor_Baud 115200  //this is baud rate used for the Arduino IDE Serial Monitor
+    
+    
+    void loop()
+    {
+      while (GPSserial.available() > 0)
+      Serial.write(GPSserial.read());
+    }
+    
+    
+    void setup()
+    {
+     Serial.begin(Serial_Monitor_Baud);   //setup Serial monitor ouput
+     GPSserial.begin(GPSBaud);            //start Hardware for GPS at defined baud rate
+    
+**Note:** You should change the **#define GPSserial Serial1** line to indicate the hardware serial port you want to use, Serial1, Serial2 or Serial3.     
+
 <br><br>
 ##Note on Ublox GPSs
 
