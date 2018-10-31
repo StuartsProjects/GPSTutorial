@@ -149,19 +149,19 @@ If you have an Arduino with additional hardware serial ports such as the ATmega1
 <br><br>
 ## Note on Ublox GPSs
 
-Some Ublox GPS will startup with the position sentences $GPRMC and $GPGGA in $GNRMC and $GNGGA format like this;
+Some Ublox GPS will start-up with the position sentences $GPRMC and $GPGGA in $GNRMC and $GNGGA format like this;
 
     $GNRMC,111218.00,A,5133.58788,N,00313.12853,W,0.205,,261018,,,A*7F
     $GNGGA,111218.00,5133.58788,N,00313.12853,W,1,06,1.36,241.1,M,49.4,M,,*55 
 
-Check that the Arduino GPS library you are using supports the $GPGN format, the latest copy of TinyGPSPlus on github does;
+Do check that the Arduino GPS library you are using supports the $GNRMC and $GNGGA format, the latest copy of TinyGPSPlus on github does;
 
 
 [https://github.com/mikalhart/TinyGPSPlus](https://github.com/mikalhart/TinyGPSPlus)
 <br><br>
  
 
-##Stuart Robinson
-##www.LoRaTracker.uk
-##October 2018
+## Stuart Robinson
+## www.LoRaTracker.uk
+## October 2018
  
