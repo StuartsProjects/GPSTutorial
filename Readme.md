@@ -1,11 +1,26 @@
-## GPS Tutorial 
+# GPS Tutorial 
 
 On public forums, such as Arduino, I see great many posts along the lines of 'My GPS does not work'. Most often constructors connect a GPS to an Arduino,  load up a complete application and find it does not work, there is no GPS location reported. Sometimes they do the sensible thing and load one of the simple examples that comes with an Arduino library, but still they find their GPS 'does not work'
 
 The first troubleshooting step is to realise that the GPS will probably only work when it's outside with a good view of the sky. It matters little how much you think you want or need the GPS to work indoors, take it outside.  
 
-If that does not solve your 'not working GPS' try a simple GPS echo program such as listed below. This reads character from the GPS and sends them to the Arduino IDE serial monitor so you can see what the GPS is up to. Remember to take your GPS outdoors. 
-#####Note that you will need to tell the program what pin numbers you have the GPS TX and GPS RX pins connected to on the Arduino. 
+If that does not solve your 'not working GPS' try a simple GPS echo program such as listed below. This reads character from the GPS and sends them to the Arduino IDE serial monitor so you can see what the GPS is up to. Remember to take your GPS outdoors.
+
+Arduinos such as the Pro Mini and UNO only have one hardware serial port so you will need to use software serial to read the GPS, this using software serial is described first, but if you have a Arduino such as Atmega1284P or ATmega2560 then these have two or more hardware serial ports and this should be used instead of software serial, see 'Using Hardware Serial Ports' toward the end of this guide.
+
+## 3.3V versus 5V logic GPSs and Arduinos
+
+Some Arduinos, such as the UNO and Mega2560 use 5V logic. A lot of the actual GPS devices are 3.3V logic but are supplied on boards (modules) that have circuitry to convert the GPSs 3.3V logic to 5V. There are too many different GPS modules out there to list and identify which are for 3.3V connection only and which are for 5V connection, make sure you check before buying or using a GPS.
+
+#### A GPS that is using 3.3V logic can be destroyed if you connect it to a 5V logic sytem such as UNO or Mega  
+
+
+## Using Software Serial 
+
+This test program uses software to emulate a hardware serial port. It is not as reliable as using a hardware serial port and at speeds of 38400 and upwards you can miss characters from the serial device (GPS). A lot of GPSs use 9600 baud and this is normally reliable under softwareserial. The program is below, it continuously reads each character from the GPS and prints it to the serial monitor.     
+
+ 
+##### Note that you will need to tell the program what pin numbers you have the GPS TX and GPS RX pins connected to on the Arduino. 
 
 
     //Simple_SoftwareSerial_GPS_Echo
@@ -39,7 +54,7 @@ If that does not solve your 'not working GPS' try a simple GPS echo program such
     }
     
 <br><br>
-This first printout below is what the GPS output will typically look like for a GPS that has just been turned on;
+This first printout below is what the GPS output will typically look like for a GPS that has just been turned on, but see the heading 'No GPS Characters' below if you don't see this sort of printout;
 
     
     $GPTXT,01,01,02,u-blox ag - www.u-blox.com*50
@@ -93,13 +108,20 @@ If a GPS is reporting a number of satellites in view such as a $GPGSV  sentence 
 
 Then it's either got a poor view of the sky, has a poor antenna or is faulty. There is no magic bit of code that will fix this problem. 
 
-##Hardware Serial Ports
+## No GPS Characters
+
+If the serial monitor is blank then either you have a faulty GPS or its connected wrong, its also possible the GPS baud rate is wrong. Reversing the GPSRX and GPSTX pins can be tried, I have not known this damage a GPS, but no guarantees. 
+
+If the characters you see on the serial monitor are garbage, then it likely you have the GPS baud rate wrong. Check the documentation for your GPS. 
+
+
+## Using Hardware Serial Ports
 If you have an Arduino with additional hardware serial ports such as the ATmega1284P or ATmega 2560 you should use the hardware serial ports for the GPS, the echo code is here;
 
     //Simple_HardwareSerial_GPS_Echo
     
     //Reads characters from a GPS using one of the Arduinos Hardware Serial
-    //port and echos them to the Arduino Serial Monitor at 115200 baud.   
+    //ports and echos them to the Arduino Serial Monitor at 115200 baud.   
     
     //Define the hardware serial port and the baud rate the GPS is using below, 9600 baud is common.
         
@@ -125,7 +147,7 @@ If you have an Arduino with additional hardware serial ports such as the ATmega1
 **Note:** You should change the **#define GPSserial Serial1** line to indicate the hardware serial port you want to use, Serial1, Serial2 or Serial3.     
 
 <br><br>
-##Note on Ublox GPSs
+## Note on Ublox GPSs
 
 Some Ublox GPS will startup with the position sentences $GPRMC and $GPGGA in $GNRMC and $GNGGA format like this;
 
