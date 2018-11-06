@@ -6,7 +6,7 @@ The first troubleshooting step is to realise that the GPS will probably only wor
 
 If that does not solve your 'not working GPS' try a simple GPS echo program such as listed below. This reads character from the GPS and sends them to the Arduino IDE serial monitor so you can see what the GPS is up to. Remember to take your GPS outdoors.
 
-Arduinos such as the Pro Mini and UNO only have one hardware serial port so you will need to use software serial to read the GPS, this using software serial is described first, but if you have a Arduino such as Atmega1284P or ATmega2560 then these have two or more hardware serial ports and this should be used instead of software serial, see 'Using Hardware Serial Ports' toward the end of this guide.
+Arduinos such as the Pro Mini and UNO only have one hardware serial port so you will need to use software serial to read the GPS, using software serial is described first. If you have an Arduino IDE supported device such as Atmega1284P or ATmega2560 then these have two or more hardware serial ports and these should be used instead of software serial, see 'Using Hardware Serial Ports' toward the end of this guide.
 
 ## 3.3V versus 5V logic GPSs and Arduinos
 
