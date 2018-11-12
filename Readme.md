@@ -1,8 +1,17 @@
 # GPS Tutorial 
 
-On public forums, such as Arduino, I see great many posts along the lines of 'My GPS does not work'. Most often constructors connect a GPS to an Arduino,  load up a complete application and find it does not work, there is no GPS location reported. Sometimes they do the sensible thing and load one of the simple examples that comes with an Arduino library, but still they find their GPS 'does not work'
+On public forums, such as Arduino, I see a great many posts along the lines of 'My GPS does not work'. Most often constructors connect a GPS to an Arduino,  load up a complete application and find it does not work, there is no GPS location reported. Sometimes they do the sensible thing and load one of the simple examples that comes with an Arduino library, but still they find their GPS 'does not work'
 
-The first troubleshooting step is to realise that the GPS will probably only work when it's outside with a good view of the sky. It matters little how much you think you want or need the GPS to work indoors, take it outside.  
+In approximate order this would be my summary of the reasons behind a GPS that 'does not work'
+
+1. GPS is indoors
+2. GPS is connected incorrectly
+3. Arduino program uses the wrong GPS baud rate
+4. Arduino program is not correct
+5. GPS is faulty
+6. Arduino is faulty
+
+So the first troubleshooting step is to realise that the GPS will probably only work when it's outside with a good view of the sky. It matters little how much you think you want or need the GPS to work indoors, take it outside.  
 
 If that does not solve your 'not working GPS' try a simple GPS echo program such as listed below. This reads character from the GPS and sends them to the Arduino IDE serial monitor so you can see what the GPS is up to. Remember to take your GPS outdoors.
 
