@@ -108,7 +108,7 @@ Within a minute or so most GPS with decent antennas and a good view of the sky s
     $GNGGA,111218.00,5133.58788,N,00313.12853,W,1,06,1.36,241.1,M,49.4,M,,*55
 
 
-Some GPS, particularly the types used in high altitude ballooning that have small ceramic stick antennas or a simple wire, can take 5 minutes or more getting a fix. I often see it claimed that (presumably a good) GPS can take many minutes, 15+, to acquire the first fix. I have seen this numerous times and its always been on a GPS with a poor antenna. Its very rare in my experience for a GPS with a good working antenna to take more than one maybe two minutes to get a fix under good conditions (outside with a clear view of the sky) and most often its around 45 seconds or less when started from cold. 
+Some GPS, particularly the types used in high altitude ballooning that have small ceramic stick antennas or a simple wire, can take 5 minutes or more getting a fix. I often see it claimed that (presumably a good) GPS can take many minutes, 15+, to acquire the first fix. I have seen this numerous times and its always been on a GPS with a poor antenna. It is rare in my experience for a modern GPS with a good working antenna to take more than one minute to get a fix under good conditions (outside with a clear view of the sky) and most often its around 45 seconds or less when started from cold. If your GPS takes longer to get a fix under good conditions then assume the GPS or its antenna is faulty. 
 
 If a GPS is reporting a number of satellites in view such as a $GPGSV  sentence that looks like this (06 satellites in view) but does not get a fix;
 
@@ -169,6 +169,44 @@ Do check that the Arduino GPS library you are using supports the $GNRMC and $GNG
 [https://github.com/mikalhart/TinyGPSPlus](https://github.com/mikalhart/TinyGPSPlus)
 <br><br>
  
+
+## GPS Hot fix mode
+
+Its a fact of life that GPSs consume a lot of power and this can be an issue if extended long term operation from small batteries is required, so for a portable GPS tracker. As an example I measured the current consumption of some different GPS as they are acquiring their first fix. When the GPS does get a fix the running current consumption can drop to about half the values shown (on average) but for the purposes of comparison the fist fix current is shown, If the software standby\backup current of the GPS is known it is in brackets. 
+
+UBLOX NEO 6M Bare module 60mA - 63mA (56uA)
+UBLOX NEO 6M Breakout board 57mA - 70mA (7mA)
+Beitian BN220 (UbloxM8) Breakout 52mA - 58mA (7.5mA)
+UBLOX 8 Breakout (?) 49mA - 58mA
+UBLOX 8N Breakout (?) 46mA - 52mA 
+UBLOX MAX8Q Bare module 25mA - 27mA (19uA)
+GlobalTop PA6H 21mA - 23mA
+Quectel L80 18 - 20mA (1mA)
+
+
+To use the UBLOX NEO 6M as an example, and they are popular and quite cheap on eBay, then at average 60mA if run continuously in a tracker powered by AA Alkalines, the batteries would only last about 48 hours, and that is just running the GPS.
+
+When first turned on the GPS needs to download the GPS Almanac and ephemeris information so it knows the information on the GPS satellites in order to calculate a position. This download takes a while and is the reason the GPS can take a minute or so to get a first fix.
+
+Download of the entire catalogue can take a bit longer than one minute, so when first turned on its a good idea to let the GPS run for a few minutes. After this period, provided the GPS has a backup facility you can turn off the main power to the GPS and it will retain the Almanac and ephemeris information. When the power to the GPS is turned back on, then it can quickly check the satellites and acquire a new fix in 5 seconds or so. This is obviously more power efficient than running the GPS all the time. 
+
+However the satellites the GPS receiver can see are moving across the sky and from time to time the GPS will need to download updated Almanac and ephemeris data which takes time. To see the effect I set up a tracker to read a GPS, wait for a new fix, then transmit the fix and the GPS on time to a remote receiver. I set to power on\off time of the GPS to 5 minutes and plotted the results over 24 hours. The GPS chosen was the Quectel L80. 
+
+The graph of results is below. 
+
+
+
+By adding up all the fix times over 24 hours I was able to calculate how much power the GPS was using in one day, this was 17mAhr per day, quite an improvement over the 432mAhr that would be used if the GPS was powered on all the time. 
+
+The next check was to see what would happen if the GPS on\off time was one hour, the results are below;
+
+
+
+OK, so lets test one of the common UBLOX modules that are popular on eBay, again running at an on\off time of one hour, the fix times are below.    
+  
+
+
+
 
 ## Stuart Robinson
 ## www.LoRaTracker.uk
