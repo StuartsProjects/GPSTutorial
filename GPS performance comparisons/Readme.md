@@ -123,9 +123,8 @@ Current after fix acquired, 20mA to 25mA
 <br><br>
 #### 6V Ublox MAX8Q
 With simple vertical wire.
-No fix acquired in 20 mins. 
+**No fix acquired in 20 mins**. 
 Current whilst acquiring fix, 22mA to 28mA
-fix in 5 min 46 seconds. With antenna vertical no fix acquired after 20 minutes. Current consumption whilst acquiring fix 22mA to 28mA. Not a good performer. 
 
 ![Picture 1](Pictures/6V.jpg)
 <br><br>
@@ -149,7 +148,7 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 
 ![Picture 1](Pictures/GPS3A.jpg)
 <br><br>
-
+<br><br>
 ####  8 - Quectel L80 
 With integral 15mm ceramic patch.  
 Fix time from cold, 30 seconds.
