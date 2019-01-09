@@ -14,7 +14,6 @@ Now 10mAhr over a day may not seem a lot, but if the batteries were a pack of AA
 
 10mAhr a day is an average current of 416uA, so its rather pointless worrying whether a project consumes 10uA in sleep versus striving for 0.1uA or less. 
 
-The issues around using a GPSs backup mode, which allows hot fix to operate, will be considered separately, but first I wanted to check the fix performance of a range of common GPS modules and comparing with two new GPSs breakout boards I have developed for the Quectel L70 and L80 GPS modules.
 
 ### GPS Signal Performance
 
