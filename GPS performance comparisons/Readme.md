@@ -256,8 +256,7 @@ With 25mm ceramic patch on PCB rear.
 Fix time from cold, 30 seconds.
 Current whilst acquiring fix, 14mA to 15mA
 Current after fix acquired, **11.2 to 14.6mA**
-Total Tracker 
-Power in 24 hours, 10 minute fixes, 15.76mAhr
+Total Tracker Power in 24 hours, 10 minute fixes, 15.76mAhr
 GPS Power in 24 hours, 10 minute fixes, 13.56mAhr 
 Tracker battery life AA Alkalines 178 days
 
@@ -283,7 +282,7 @@ With integral 15mm ceramic patch.
 Fix time from cold, 30 seconds.
 Current whilst acquiring fix, 21.6mA to 28mA
 Current after fix acquired, 21mA. 
-Power in 24 hours, 10 minute fixes, 19.72mAhr
+Total Tracker Power in 24 hours, 10 minute fixes, 19.72mAhr
 GPS Power in 24 hours, 10 minute fixes, 17.52mAhr 
 Tracker battery life AA Alkalines 142 days
 
