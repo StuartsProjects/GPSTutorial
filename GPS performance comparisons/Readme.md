@@ -76,11 +76,8 @@ There are some small super capacitors around the same size as the Seiko MS621, b
 So if a super capacitor is too big to be practical and we have already dismissed small lithium rechargeables, then what is the alternative ?
 
 
-
-
 ##### GPS Backup - What to do ?
  
-
 
 So if we don’t use a a super capacitor or a small lithium rechargeable, then what is the alternative ?
 
@@ -102,6 +99,7 @@ Whilst the solution to providing a long term GPS backup current is simple to imp
 
 The L80 GPS has a slightly worse power performance than the L70, but it has its own ceramic patch antenna and easy to include in PCB designs and solder in place, I like it. The L70 has a balloon mode, for use up to 80km.
 
+**Note:** It should be noted that the vast majority of the GPSs modules reported on in this report will, if operated over several weeks, revert to cold fix mode due to failure of the backup supplies, that will in turn significantly increase power consumption. 
 
 
 
@@ -156,22 +154,21 @@ And the respective plots from Ucenter were are shown below, GPS 3 is a Ublox6M t
 
 
 
-
 #### 1 - Ublox 7M GPS
 Often used on quadcopters and similar, has 25mm ceramic patch antenna inside. 
+<br><br>
 
  ![Picture 1](Pictures/1.jpg)
 <br><br>
 <br><br>
 #### 2 - Ublox8 GPS Ceramic Patch
-With 25mm ceramic patch antenna. 
-
-Fix time from cold, 35 seconds.
-Current whilst acquiring fix, 50mA to 54mA.
-Current after fix acquired, 45mA to 56mA.
-Total Tracker Power in 24 hours, 10 minute fixes, 38.1mAhr
-GPS Power in 24 hours, 10 minute fixes, 35.9mAhr
-Tracker battery life AA Alkalines 73 days
+* With 25mm ceramic patch antenna. 
+* Fix time from cold, 35 seconds.
+* Current whilst acquiring fix, 50mA to 54mA.
+* Current after fix acquired, 45mA to 56mA.
+* Total Tracker Power in 24 hours, 10 minute fixes, 38.1mAhr
+* GPS Power in 24 hours, 10 minute fixes, 35.9mAhr
+* Tracker battery life AA Alkalines 73 days
 
 ![Picture 1](Pictures/2.jpg)
 
@@ -183,10 +180,10 @@ Tracker battery life AA Alkalines 73 days
 
 
 #### 3A - Ublox6M GPS
-With plug in  25mm ceramic patch antenna.
-Fix time from cold, 35 seconds.
-Current whilst acquiring fix, 50mA to 55mA
-Current after fix acquired, 45mA to 55mA
+* With plug in  25mm ceramic patch antenna.
+* Fix time from cold, 35 seconds.
+* Current whilst acquiring fix, 50mA to 55mA
+* Current after fix acquired, 45mA to 55mA
 <br><br>
 
 
@@ -194,7 +191,7 @@ Current after fix acquired, 45mA to 55mA
 <br><br>
 <br><br>
 #### 3B - Ublox6M GPS
-With plug in  mini ceramic patch antenna. Much reduced signals. No fix.
+* With plug in  mini ceramic patch antenna. Much reduced signals. No fix.
 
 ![Picture 1](Pictures/3B.jpg)
 
@@ -206,44 +203,49 @@ With plug in  mini ceramic patch antenna. Much reduced signals. No fix.
 <br><br>
 **GPSs 5,6 and 7** below are typical types for high altitude balloon (HAB) tracking, all 3 have a high altitude mode allowing operation above 18,000M
 
-
-![Picture 1](Pictures/GPS2A.jpg)
 <br><br>
 <br><br>
 #### 5H Quectel L70
-With simple horizontal wire antenna. 
-Fix time from cold, 32 seconds.
-Current whilst acquiring fix, 14mA to 15mA
-Current after fix acquired, 15mA to 22mA. The L70 is the same size and pin layout as the Ublox MAX8Q.
+* With simple horizontal wire antenna.
+* Fix time from cold, 32 seconds.
+* Current whilst acquiring fix, 14mA to 15mA
+* Current after fix acquired, 15mA to 22mA. The L70 is the same size and pin layout as the Ublox MAX8Q.
+* Total Tracker Power in 24 hours, 10 minute fixes, 17.6mAhr
+* GPS Power in 24 hours, 10 minute fixes, 15.4mAhr 
+* Tracker battery life AA Alkalines 159 days
 
-
+<br><br>
 ![Picture 1](Pictures/5H.jpg)
 <br><br>
+![Picture 1](Pictures/5HF.jpg)
 <br><br>
+
 #### 5V Quectel L70
-With simple vertical wire antenna. 
-Fix time from cold, 36 seconds.
-Current whilst acquiring fix, 14mA to 15mA
-Current after fix acquired, 15mA to 22mA
+* With simple vertical wire antenna. 
+* Fix time from cold, 36 seconds.
+* Current whilst acquiring fix, 14mA to 15mA
+* Current after fix acquired, 15mA to 22mA
 
 ![Picture 1](Pictures/5V.jpg)
 
 <br><br>
 
 #### 6H Ubloz MAX8Q
-The standard HAB GPS perhaps. With simple horizontal wire.
-Fix time from cold, 5 min 46 seconds.
-Current whilst acquiring fix, 22mA to 28mA
-Current after fix acquired, 20mA to 25mA
+The standard HAB GPS perhaps.
+
+* With simple horizontal wire.
+* Fix time from cold, 5 min 46 seconds.
+* Current whilst acquiring fix, 22mA to 28mA
+* Current after fix acquired, 20mA to 25mA
 <br><br>
 
 ![Picture 1](Pictures/6H.jpg)
 <br><br>
 <br><br>
 #### 6V Ublox MAX8Q
-With simple vertical wire.
-**No fix acquired in 20 mins**. 
-Current whilst acquiring fix, 22mA to 28mA
+* With simple vertical wire.
+* **No fix acquired in 20 mins**. 
+* Current whilst acquiring fix, 22mA to 28mA
 
 ![Picture 1](Pictures/6V.jpg)
 <br><br>
@@ -251,13 +253,13 @@ Current whilst acquiring fix, 22mA to 28mA
 
 <br><br>
 #### 7 Quectel L70 
-With 25mm ceramic patch on PCB rear.  
-Fix time from cold, 30 seconds.
-Current whilst acquiring fix, 14mA to 15mA
-Current after fix acquired, **11.2 to 14.6mA**
-Total Tracker Power in 24 hours, 10 minute fixes, 15.76mAhr
-GPS Power in 24 hours, 10 minute fixes, 13.56mAhr 
-Tracker battery life AA Alkalines 178 days
+* With 25mm ceramic patch on PCB rear.  
+* Fix time from cold, 30 seconds.
+* Current whilst acquiring fix, 14mA to 15mA
+* Current after fix acquired, **11.2 to 14.6mA**
+* Total Tracker Power in 24 hours, 10 minute fixes, 15.76mAhr
+* GPS Power in 24 hours, 10 minute fixes, 13.56mAhr 
+* Tracker battery life AA Alkalines 178 days
 
 
 ![Picture 1](Pictures/7.jpg)
@@ -277,13 +279,13 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 <br><br>
 <br><br>
 ####  8 - Quectel L80 
-With integral 15mm ceramic patch.  
-Fix time from cold, 30 seconds.
-Current whilst acquiring fix, 21.6mA to 28mA
-Current after fix acquired, 21mA. 
-Total Tracker Power in 24 hours, 10 minute fixes, 19.72mAhr
-GPS Power in 24 hours, 10 minute fixes, 17.52mAhr 
-Tracker battery life AA Alkalines 142 days
+* With integral 15mm ceramic patch.  
+* Fix time from cold, 30 seconds.
+* Current whilst acquiring fix, 21.6mA to 28mA
+* Current after fix acquired, 21mA. 
+* Total Tracker Power in 24 hours, 10 minute fixes, 19.72mAhr
+* GPS Power in 24 hours, 10 minute fixes, 17.52mAhr 
+* Tracker battery life AA Alkalines 142 days
 
 
 ![Picture 1](Pictures/8.jpg)
