@@ -298,10 +298,34 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 <br><br>
 <br><br>
 
+###  9 - GlobalTop PA6H 
+
+* Total Tracker Power in 24 hours, 10 minute fixes, 25.8mAhr
+* GPS Power in 24 hours, 10 minute fixes, 23.6mAhr 
+* Tracker battery life AA Alkalines 109 days
+
+
+
 ![Picture 1](Pictures/9F.jpg)
 
 <br><br>
 <br><br>
+
+####  10 - Beitian BN220 
+
+* Total Tracker Power in 24 hours, 10 minute fixes, 80.4mAhr
+* GPS Power in 24 hours, 10 minute fixes, 78.2mAhr 
+* Tracker battery life AA Alkalines 35 days
+
+<br><br>
+
+![Picture 1](Pictures/10F.jpg)
+
+<br><br>
+<br><br>
+
+
+
 ## Tracker node sleep current - a wasteful race to the bottom ?
 
 
