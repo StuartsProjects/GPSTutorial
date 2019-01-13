@@ -182,7 +182,7 @@ Often used on quadcopters and similar, has 25mm ceramic patch antenna inside.
 
 
 #### 3A - Ublox6M GPS
-* With plug in  25mm ceramic patch antenna.
+* With external plug in 25mm ceramic patch antenna.
 * Fix time from cold, 35 seconds.
 * Current whilst acquiring fix, 50mA to 55mA
 * Current after fix acquired, 45mA to 55mA
@@ -241,6 +241,8 @@ The standard HAB GPS perhaps.
 * Current after fix acquired, 20mA to 25mA
 <br><br>
 
+A second example of the MAX8Q with horizontal wire antenna was tested, Fix time from cold, 7 min 35 seconds.
+
 ![Picture 1](Pictures/6H.jpg)
 <br><br>
 <br><br>
@@ -281,6 +283,7 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 <br><br>
 <br><br>
 ####  8 - Quectel L80 
+
 * With integral 15mm ceramic patch.  
 * Fix time from cold, 30 seconds.
 * Current whilst acquiring fix, 21.6mA to 28mA
@@ -300,11 +303,16 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 
 ###  9 - GlobalTop PA6H 
 
+* Fix time from cold, 38 seconds.
+* Current whilst acquiring fix, 22mA to 23mA.
+* Current after fix acquired, 18mA to 25mA.
 * Total Tracker Power in 24 hours, 10 minute fixes, 25.8mAhr
 * GPS Power in 24 hours, 10 minute fixes, 23.6mAhr 
 * Tracker battery life AA Alkalines 109 days
 
+![Picture 1](Pictures/9.jpg)
 
+<br><br>
 
 ![Picture 1](Pictures/9F.jpg)
 
@@ -313,9 +321,15 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 
 ####  10 - Beitian BN220 
 
+* Fix time from cold, 38 seconds.
+* Current whilst acquiring fix, 47mA to 57mA.
+* Current after fix acquired, 47mA to 53mA.
 * Total Tracker Power in 24 hours, 10 minute fixes, 80.4mAhr
 * GPS Power in 24 hours, 10 minute fixes, 78.2mAhr 
 * Tracker battery life AA Alkalines 35 days
+
+
+![Picture 1](Pictures/10.jpg)
 
 <br><br>
 
@@ -326,7 +340,23 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 
 
 
-## Tracker node sleep current - a wasteful race to the bottom ?
+####  11 - Ublox NEO 6M with Ceramic Patch 
+
+* Fix time from cold, xx seconds.
+* Current whilst acquiring fix, xxmA to xxmA.
+* Current after fix acquired, xxmA to xxmA.
+* Total Tracker Power in 24 hours, 10 minute fixes, xxmAhr
+* GPS Power in 24 hours, 10 minute fixes, xxmAhr 
+* Tracker battery life AA Alkalines xx days
+
+
+![Picture 1](Pictures/11.jpg)
+
+<br><br>
+
+
+
+## Reducing Tracker node sleep current - a wasteful race to the bottom ?
 
 
 There is quite a lot of significance being attached to reducing the sleep current of LoRa projects or nodes to extremly low levels, the lower the better apparently, but is sleep current alone a significant factor ? 
@@ -404,14 +434,25 @@ One additional advantage capitalises on the Arduinos quick wakeup form deep slee
 
 Using the TPL5110 to power down node a node (with Arduino serial bootloader) uses 0.33mAhr per day sleeping and waking and the TPL5010 uses far less, 0.037mAhr per day. So they are significant power savings to be had using a bare bones Arduino setup and the TPL5010 as a wakeup timer.  If you remove the Arduino serial boot loader then there is not a lot to choose between the two methods, although the TPL5010 does provide added flexibility. 
 
-
-
 #### To be continued
 <br><br>
+
+### Summary 
+
+In the performance tests the Quectel L70 and L80 GPS modules are clear winners, by far the lowest current consumption and with a good hot fix performance.
+
+The L70 in particular is a surprise, it's the same size and pin layout as the equivalent Ublox MAX8Q but has a far better signal performance and the lowest current consumption I have seen for a GPS. Its got a high altitude balloon mode, is easy to find as a bare module, and low cost too, I recently bought 5 off for £3.50 each delivered. Under the same signal conditions as the MAX8Q the L70 with a simple wire antenna behaved like a standard GPS with ceramic patch antenna; a cold fix time of 32 seconds whilst the Ublox took 5 minutes or more. 
+
+The L80 is the second best performer in the tests and is in a compact and easy to solder format. 
+
+It should be noted that over a long period hot fix times are in the 10 second range for most GPS, this is far more than the often quoted headline figures of 2 - 5 seconds. it also need to be appreciated just how much power a GPS based project actually uses. Even for the low power Quectels, the GPS was consuming more than 85% of the projects power, the rest being used for the LoRa transmissions. 
+
+Wit the GPS consuming so much current it is clear that the trackers sleep current is of very little consequence, even at a 'high' level of 5uA, which is easy to achieve with standard Arduino parts, the sleep current is only 1% of the total project current.   
+
 <br><br>
 
 
 ## Stuart Robinson
 ## www.LoRaTracker.uk
-## December 2018
+## January 2019
  
