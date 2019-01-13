@@ -190,22 +190,9 @@ When first turned on the GPS needs to download the GPS Almanac and ephemeris inf
 
 Download of the entire catalogue can take a bit longer than one minute, so when first turned on its a good idea to let the GPS run for a few minutes. After this period, provided the GPS has a backup facility you can turn off the main power to the GPS and it will retain the Almanac and ephemeris information. When the power to the GPS is turned back on, then it can quickly check the satellites and acquire a new fix in 5 seconds or so. This is obviously more power efficient than running the GPS all the time. 
 
-However the satellites the GPS receiver can see are moving across the sky and from time to time the GPS will need to download updated Almanac and ephemeris data which takes time. To see the effect I set up a tracker to read a GPS, wait for a new fix, then transmit the fix and the GPS on time to a remote receiver. I set to power on\off time of the GPS to 5 minutes and plotted the results over 24 hours. The GPS chosen was the Quectel L80. 
+However the satellites the GPS receiver can see are moving across the sky and from time to time the GPS will need to download updated Almanac and ephemeris data which takes time. To see the effect I set up a tracker to read a GPS, wait for a new fix, then transmit the fix and the GPS on time to a remote receiver. I set to power on\off time of the GPS to 10 minutes and plotted the results over 24 hours. The results for a range of GPS are in the **GPS performance comparisons** folder in this repository. 
 
-The graph of results is below. 
-
-
-
-By adding up all the fix times over 24 hours I was able to calculate how much power the GPS was using in one day, this was 17mAhr per day, quite an improvement over the 432mAhr that would be used if the GPS was powered on all the time. 
-
-The next check was to see what would happen if the GPS on\off time was one hour, the results are below;
-
-
-
-OK, so lets test one of the common UBLOX modules that are popular on eBay, again running at an on\off time of one hour, the fix times are below.    
-  
-
-
+By adding up all the fix times over 24 hours I was able to calculate how much power the one GPS was using in one day, this was around 17mAhr per day, quite an improvement over the 432mAhr that would be used if the GPS was powered on all the time. 
 
 
 ## Stuart Robinson
