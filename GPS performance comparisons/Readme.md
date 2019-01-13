@@ -19,17 +19,17 @@ Do note that whilst a 'hot fix' of a few seconds may be quoted as the norm, the 
 
 ### GPS Signal Performance
 
-For each GPS I will measure the signal receiving performance the GPS. For this we will use the Ucenter application which when connected to a GPS produces a chart of satellite received satellites and their signal strengths. GPSs with a good signal performance will achieve initial lock quicker, work better in more marginal conditions and will overall require less power to operate. 
+For each GPS I will measure the signal receiving performance the GPS. For this we will use the U-center application which when connected to a GPS produces a chart of satellite received satellites and their signal strengths. GPSs with a good signal performance will achieve initial lock quicker, work better in more marginal conditions and will overall require less power to operate. 
 
-Ucenter uses the NMEA GSV sentence to obtain the signal strengths of the satellites;
+U-center uses the NMEA GSV sentence to obtain the signal strengths of the satellites;
 
 *Signal strength, in dB-Hz (0 - 99)
 To compare with SNR values found in Bin messages (such as Bin96) subtract 30 from this signal strength value for an approximate SNR value
 SS - 30 = SNR (from Bin message)*
 
-A signal level of 26 or lower is marginal and you may not get a fix, or it could take a long time. A value of 40 or more is a strong signal. if a GPS is receiving 3 or more satellites at this signal level or greater then it can be expected to aquire a fix in 30-50 seconds from cold.
+A signal level of 26 or lower is marginal and you may not get a fix, or it could take a long time. A value of 40 or more is a strong signal. if a GPS is receiving 3 or more satellites at this signal level or greater then it can be expected to acquire a fix in 30-50 seconds from cold.
 
-The Ucenter application is designed for Ublox GPSs but it will display satellite information for other GPS makes also. 
+The U-center application is designed for Ublox GPSs but it will display satellite information for other GPS makes also. 
 
 In the roof of my shed I have a clear plastic panel and I placed the GPSs in turn underneath this on a high shelf. The location was not ideal for good GPS reception but indicative of a slightly marginal situation.
 
@@ -57,7 +57,7 @@ Although fitting an MS621 battery is common with GPS modules, its not suitable a
 
 If a small lithium battery is not suitable;  what about a super capacitor that can at least be charged fairly quickly so it might accrue enough charge during a short hot fix power on to last for several hours ?
 
-There is a web site which is an online super capacitor charge and discharge calculator;
+There is a web site which is an on-line super capacitor charge and discharge calculator;
 
 [Super Capacitor Calculator](https://www.maximintegrated.com/en/design/tools/calculators/product-design/supercap.cfm)
 
@@ -75,7 +75,7 @@ Checking on the Farnell web site a 1Farad 3.6V super capacitor would be around 2
 
 There are some small super capacitors around the same size as the Seiko MS621, but these super capacitors are of very limited capacity and would only provide a couple of hours backup (based on practical tests).
 
-So if a super capacitor is too big to be practical and we have already dismissed small lithium rechargeables, then what is the alternative ?
+So if a super capacitor is too big to be practical and we have already dismissed small lithium rechargeable, then what is the alternative ?
 
 
 ##### GPS Backup - What to do ?
@@ -88,7 +88,7 @@ We could of course use a non-recharegeable lithium battery such as a CR1216 but 
 ![Picture 1](Pictures/GPSandBattery.jpg)
 
 
-In addition even a battery as physically big as the CR1216 only has a capacity of circa 25mAhr, so that would only keep the GPS (@15uA backup current) going for 70 days. A tracker based on this setup would need it’s GPS battery replaced around every two months.
+In addition even a battery as physically big as the CR1216 only has a capacity of circa 25mAhr, so that would only keep the GPS (@15uA backup current) going for 70 days. A tracker based on this set-up would need it’s GPS battery replaced around every two months.
 
 The answer to the problem is quite simple really. With the small lithium rechargeable or super capacitor options, then the backup power for the GPS is actually coming from the projects main battery, so why not use the main battery as the backup power source for the GPS ?
 
@@ -99,7 +99,7 @@ Whilst the solution to providing a long term GPS backup current is simple to imp
 ![Picture 1](Pictures/L70andL80Breakout.jpg) 
 
 
-The L80 GPS has a slightly worse power performance than the L70, but it has its own ceramic patch antenna and easy to include in PCB designs and solder in place, I like it. The L70 has a balloon mode, for use up to 80km.
+The L80 GPS has a slightly worse power performance than the L70, but it has its own ceramic patch antenna and easy to include in PCB designs and solder in place, I like it. The L70 has a balloon mode, for use up to an altitude of 80km, most GPSs cease to functioon above 18km.
 
 **Note:** It should be noted that the vast majority of the GPSs modules reported on in this report will, if operated over several weeks, revert to cold fix mode due to failure of the backup supplies, that will in turn significantly increase power consumption. 
 
@@ -111,7 +111,12 @@ A 'hot fix' takes place when a GPS is powered on or woken up from a software bas
 
 The only practical way to monitor the actual current consumption of a GPS tracker over a long period is to externally measure the actual mAhr used, if the hot fix time varies a lot its going to be difficult to calculate the figure. As an example it was noted that for one of the UBLOX GPSs used in these tests the hot fix time varied from 2.0 seconds to 32 seconds, its thus very difficult to come up with an average for calculation purposes.   
 
-Some Arduino software was written that powered up the GPS, recorded how long the fix took, powered down the GPS, sent the GPS information at bandwidth 125000hz and SF12 (worse case for long distance) and transmitted the location packet. The tracker was then powered off by a real time clock based **power controller** (DS3231) of my own design. This power controller turned off the tracker for 10 minutes, so this was the GPS location transmission interval. The sleep current for the entire arrangement was 1.5uA. 
+Some Arduino software was written that powered up the GPS, recorded how long the fix took, powered down the GPS, sent the GPS information at bandwidth 125000Hz and SF12 (worse case for long distance) and transmitted the location packet. The tracker was then powered off by a real time clock based **power controller** (DS3231) of my own design;
+
+![Picture 1](Pictures/DS3231PowerController.jpg)
+<br><br>
+
+The power controller goes in the battery lead of a project and is controlled from the project with a 4 wire I2C lead. Power off time is programmable from seconds to one month. For this GPS test it turned off the tracker for 10 minutes, so this was the GPS location transmission interval. The sleep current for the entire arrangement was 1.5uA. 
 
 In the real World tests described below for a common GPS it was shown that at a 10 minute GPS fix interval the GPS uses 36mAhr of battery power per day. As a comparison, a tracker board with a sleep current of 10uA (a high figure) would use 0.24mAhr of battery power per day, which is an insignificant amount when compared to the power used by the GPS.
 
@@ -126,7 +131,7 @@ The entire package was placed outdoors in my garden on a table which would be ar
 
 ![Picture 1](Pictures/100.jpg)
 
-The Arduino receiver software was written for the Pro Mini based LCD reciever of mu own design. It recorded the received packets, including GPS fix time, and reported them to an attached display, serial monitor and micro SD card log. The SD card log format was in CSV so it was straight foward to read to data on the file into a spreadsheet and draw a graph of the variation in fix times. 
+The Arduino receiver software was written for the Pro Mini based LCD receiver of mu own design. It recorded the received packets, including GPS fix time, and reported them to an attached display, serial monitor and micro SD card log. The SD card log format was in CSV so it was straight forward to read to data on the file into a spreadsheet and draw a graph of the variation in fix times. 
 
 
 **Note:** This report is a work in progress, fix and current data is not yet available for some GPSs.
@@ -150,14 +155,14 @@ This is the first set of GPSs';
 
 ![Picture 1](Pictures/GPS1A.jpg)
 
-And the respective plots from Ucenter were are shown below, GPS 3 is a Ublox6M tested with the large ceramic patch antenna (3A) and the smaller one which is sometimes used (3B).
+And the respective plots from U-center were are shown below, GPS 3 is a Ublox6M tested with the large ceramic patch antenna (3A) and the smaller one which is sometimes used (3B).
 
 <br><br>
 
 
 
 #### 1 - Ublox 7M GPS
-Often used on quadcopters and similar, has 25mm ceramic patch antenna inside. 
+Often used on quad copters and similar, has 25mm ceramic patch antenna inside. 
 <br><br>
 
  ![Picture 1](Pictures/1.jpg)
@@ -199,11 +204,21 @@ Often used on quadcopters and similar, has 25mm ceramic patch antenna inside.
 
 <br><br>
 #### 4 - unknown type.
+* With 18mm ceramic patch antenna.
+* Fix time from cold, 25 seconds.
+* Current whilst acquiring fix, 38mA to 53mA
+* Current after fix acquired, 38mA to 53mA
 
 ![Picture 1](Pictures/4.jpg)
 
 <br><br>
+
+### High Altitude Balloon GPSs
+
 **GPSs 5,6 and 7** below are typical types for high altitude balloon (HAB) tracking, all 3 have a high altitude mode allowing operation above 18,000M
+
+![Picture 1](Pictures/GPS2A.jpg)
+
 
 <br><br>
 <br><br>
@@ -342,9 +357,9 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 
 ####  11 - Ublox NEO 6M with Ceramic Patch 
 
-* Fix time from cold, xx seconds.
-* Current whilst acquiring fix, xxmA to xxmA.
-* Current after fix acquired, xxmA to xxmA.
+* Fix time from cold, 122 seconds.
+* Current whilst acquiring fix, 46mA to 56mA.
+* Current after fix acquired, 45mA to 57mA.
 * Total Tracker Power in 24 hours, 10 minute fixes, xxmAhr
 * GPS Power in 24 hours, 10 minute fixes, xxmAhr 
 * Tracker battery life AA Alkalines xx days
@@ -359,13 +374,13 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 ## Reducing Tracker node sleep current - a wasteful race to the bottom ?
 
 
-There is quite a lot of significance being attached to reducing the sleep current of LoRa projects or nodes to extremly low levels, the lower the better apparently, but is sleep current alone a significant factor ? 
+There is quite a lot of significance being attached to reducing the sleep current of LoRa projects or nodes to extremely low levels, the lower the better apparently, but is sleep current alone a significant factor ? 
 
 A bare bones ATmgea328P or 1284P based node with a LoRa module can be used in normal deep sleep mode and the sleep current is around 0.2uA, you can wake up from an external interrupt. Add a regulator such as MCP1700 if you need one, and total sleep current is around 1.5uA with a TPL5010 acting as a watchdog and interrupt wake up device.
 
-A popular alternative to the processor deep sleep approach appears to be to use the TPL5110 device to completely power down a node, in periods from seconds to 2 hours. This setup has a deep sleep current of less than 0.1uA. This appears to be a significant improvement on the 1.5uA of a bare bones ATmega328 in deep sleep mode, or is it ? Is concentrating or being obsessed with the deep sleep current the best way of reducing overall power consumption  ?
+A popular alternative to the processor deep sleep approach appears to be to use the TPL5110 device to completely power down a node, in periods from seconds to 2 hours. This set-up has a deep sleep current of less than 0.1uA. This appears to be a significant improvement on the 1.5uA of a bare bones ATmega328 in deep sleep mode, or is it ? Is concentrating or being obsessed with the deep sleep current the best way of reducing overall power consumption  ?
 
-Take a look at the scope plot below, it shows (top trace) the power to a The Thing Network (TTN) GPS tracker node based on an Arduino Pro Mini being turned on. The lower trace shows a logic pin being sent high at the point the tracker node software queued the packet ready to send, so the difference is the node wakeup time. The delay from power on to ready to send the packet was 1512mS, mainly caused by the Arduino bootloader delay. Power consumption during this 1512mS was 5.42mA.  
+Take a look at the scope plot below, it shows (top trace) the power to a The Thing Network (TTN) GPS tracker node based on an Arduino Pro Mini being turned on. The lower trace shows a logic pin being sent high at the point the tracker node software queued the packet ready to send, so the difference is the node wakeup time. The delay from power on to ready to send the packet was 1512mS, mainly caused by the Arduino boot loader delay. Power consumption during this 1512mS was 5.42mA.  
 
 
 
