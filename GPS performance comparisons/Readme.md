@@ -460,7 +460,9 @@ The L70 in particular is a surprise, it's the same size and pin layout as the eq
 
 The L80 is the second best performer in the tests and is in a compact and easy to solder format. 
 
-It should be noted that over a long period hot fix times are in the 10 second range for most GPS, this is far more than the often quoted headline figures of 2 - 5 seconds. it also need to be appreciated just how much power a GPS based project actually uses. Even for the low power Quectels, the GPS was consuming more than 85% of the projects power, the rest being used for the LoRa transmissions. 
+It should be noted that over a long period hot fix times are in the 10 second average range for most GPSes, this is far more than the often quoted headline figures of 2 - 5 seconds. It can be seen from the graphs that there are occasional fixes that take 30 seconds or more. These long fix times are required to download ephemeris data from new satellites that come into view. The detail of this data is constantly changing so you cannot store it long term.  
+
+It also need to be appreciated just how much power a GPS based project actually uses. Even for the low power Quectels, the GPS was consuming more than 85% of the projects power, the rest being used for the LoRa transmissions. 
 
 Wit the GPS consuming so much current it is clear that the trackers sleep current is of very little consequence, even at a 'high' level of 5uA, which is easy to achieve with standard Arduino parts, the sleep current is only 1% of the total project current.   
 
