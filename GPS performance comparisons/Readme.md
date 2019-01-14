@@ -186,18 +186,25 @@ Often used on quad copters and similar, has 25mm ceramic patch antenna inside.
 <br><br>
 
 
-#### 3A - Ublox6M GPS
+#### 3A - Ublox 6M GPS
 * With external plug in 25mm ceramic patch antenna.
 * Fix time from cold, 35 seconds.
 * Current whilst acquiring fix, 50mA to 55mA
 * Current after fix acquired, 45mA to 55mA
+* Total Tracker Power in 24 hours, 10 minute fixes, 80.7mAhr
+* GPS Power in 24 hours, 10 minute fixes, 78.5mAhr 
+* Tracker battery life AA Alkalines 35 days
 <br><br>
 
 
 ![Picture 1](Pictures/3A.jpg)
 <br><br>
+
+![Picture 1](Pictures/3AF.jpg)
+
+
 <br><br>
-#### 3B - Ublox6M GPS
+#### 3B - Ublox 6M GPS
 * With plug in  mini ceramic patch antenna. Much reduced signals. No fix.
 
 ![Picture 1](Pictures/3B.jpg)
