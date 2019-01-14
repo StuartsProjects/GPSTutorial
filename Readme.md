@@ -26,10 +26,18 @@ Some Arduinos, such as the UNO and Mega2560 use 5V logic. A lot of the actual GP
 
 ## Using Software Serial 
 
-This test program uses software to emulate a hardware serial port. It is not as reliable as using a hardware serial port and at speeds of 38400 and upwards you can miss characters from the serial device (GPS). A lot of GPSs use 9600 baud and this is normally reliable under softwareserial. The program is below, it continuously reads each character from the GPS and prints it to the serial monitor.     
+This test program uses software to emulate a hardware serial port. It is not as reliable as using a hardware serial port and at speeds of 38400 and upwards you can miss characters from the serial device (GPS). A lot of GPSs use 9600 baud and this is normally reliable under softwareserial. The program is below, it continuously reads each character from the GPS and prints it to the serial monitor.
+
+Note that software serial does not work on some Arduino pins. The full details of supported pins are found at this Internet link;
+
+[Software Serial Supported Pins](https://www.arduino.cc/en/Reference/softwareSerial)
+
+On a UNO, ProMicro or ATMega1284P you can use any available pins apart from 0 and 1, these are used for the serial monitor output. On the ATMega2560 you can only use these pins for software serial RX pin;
+
+10,11,12,13,14,15,50,51,52,53,A8,A9,A10,A11,A12,A13,A14,A15.  
 
  
-##### Note that you will need to tell the program what pin numbers you have the GPS TX and GPS RX pins connected to on the Arduino. 
+##### You will need to tell the program what pin numbers you have the GPS TX and GPS RX pins connected to on the Arduino. 
 
 
     //Simple_SoftwareSerial_GPS_Echo
