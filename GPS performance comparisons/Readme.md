@@ -162,12 +162,23 @@ And the respective plots from U-center were are shown below, GPS 3 is a Ublox6M 
 
 
 #### 1 - Ublox 7M GPS
-Often used on quad copters and similar, has 25mm ceramic patch antenna inside. 
+Often used on quad copters and similar.
 <br><br>
 
- ![Picture 1](Pictures/1.jpg)
+* With 25mm ceramic patch antenna. 
+* Fix time from cold, xx seconds.
+* Current whilst acquiring fix, xxmA to xxmA.
+* Current after fix acquired, xxmA to xxmA.
+* Total Tracker Power in 24 hours, 10 minute fixes, 22.7mAhr
+* GPS Power in 24 hours, 10 minute fixes, 20.5mAhr
+* Tracker battery life AA Alkalines 123 days
+
+![Picture 1](Pictures/1.jpg)
+
+![Picture 1](Pictures/1F.jpg)
+
 <br><br>
-<br><br>
+
 #### 2 - Ublox8 GPS Ceramic Patch
 * With 25mm ceramic patch antenna. 
 * Fix time from cold, 35 seconds.
