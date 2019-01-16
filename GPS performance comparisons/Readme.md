@@ -169,9 +169,9 @@ Often used on quad copters and similar.
 * Fix time from cold, xx seconds.
 * Current whilst acquiring fix, xxmA to xxmA.
 * Current after fix acquired, xxmA to xxmA.
-* Total Tracker Power in 24 hours, 10 minute fixes, 22.7mAhr
-* GPS Power in 24 hours, 10 minute fixes, 20.5mAhr
-* Tracker battery life AA Alkalines 123 days
+* Total Tracker Power in 24 hours, 10 minute fixes, 21.5mAhr
+* GPS Power in 24 hours, 10 minute fixes, 19.3mAhr
+* Tracker battery life AA Alkalines 133 days
 
 ![Picture 1](Pictures/1.jpg)
 
