@@ -244,7 +244,7 @@ Often used on quad copters and similar.
 * With simple horizontal wire antenna.
 * Fix time from cold, 32 seconds.
 * Current whilst acquiring fix, 14mA to 15mA
-* Current after fix acquired, 15mA to 22mA. The L70 is the same size and pin layout as the Ublox MAX8Q.
+* Current after fix acquired, 15mA to 22mA. The L70 is the same size and pin layout as the Ublox MAXM8Q.
 * Total Tracker Power in 24 hours, 10 minute fixes, 17.6mAhr
 * GPS Power in 24 hours, 10 minute fixes, 15.4mAhr 
 * Tracker battery life AA Alkalines 159 days
@@ -265,7 +265,7 @@ Often used on quad copters and similar.
 
 <br><br>
 
-#### 6H Ubloz MAX8Q
+#### 6H Ubloz MAXM8Q
 The standard HAB GPS perhaps.
 
 * With simple horizontal wire.
@@ -274,12 +274,12 @@ The standard HAB GPS perhaps.
 * Current after fix acquired, 20mA to 25mA
 <br><br>
 
-A second example of the MAX8Q with horizontal wire antenna was tested, Fix time from cold, 7 min 35 seconds.
+A second example of the MAXM8Q with horizontal wire antenna was tested, Fix time from cold, 7 min 35 seconds.
 
 ![Picture 1](Pictures/6H.jpg)
 <br><br>
 <br><br>
-#### 6V Ublox MAX8Q
+#### 6V Ublox MAXM8Q
 * With simple vertical wire.
 * **No fix acquired in 20 mins**. 
 * Current whilst acquiring fix, 22mA to 28mA
@@ -350,7 +350,6 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 ![Picture 1](Pictures/9F.jpg)
 
 <br><br>
-<br><br>
 
 ####  10 - Beitian BN220 
 
@@ -369,8 +368,6 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 ![Picture 1](Pictures/10F.jpg)
 
 <br><br>
-<br><br>
-
 
 
 ####  11 - Ublox NEO 6M with Ceramic Patch 
@@ -474,7 +471,7 @@ Using the TPL5110 to power down node a node (with Arduino serial bootloader) use
 
 In the performance tests the Quectel L70 and L80 GPS modules are clear winners, by far the lowest current consumption and with a good hot fix performance.
 
-The L70 in particular is a surprise, it's the same size and pin layout as the equivalent Ublox MAX8Q but has a far better signal performance and the lowest current consumption I have seen for a GPS. Its got a high altitude balloon mode, is easy to find as a bare module, and low cost too, I recently bought 5 off for £3.50 each delivered. Under the same signal conditions as the MAX8Q the L70 with a simple wire antenna behaved like a standard GPS with ceramic patch antenna; a cold fix time of 32 seconds whilst the Ublox took 5 minutes or more. 
+The L70 in particular is a surprise, it's the same size and pin layout as the equivalent Ublox MAXM8Q but has a far better signal performance and the lowest current consumption I have seen for a GPS. Its got a high altitude balloon mode, is easy to find as a bare module, and low cost too, I recently bought 5 off for £3.50 each delivered. Under the same signal conditions as the MAXM8Q the L70 with a simple wire antenna behaved like a standard GPS with ceramic patch antenna; a cold fix time of 32 seconds whilst the Ublox took 5 minutes or more. 
 
 The L80 is the second best performer in the tests and is in a compact and easy to solder format. 
 
