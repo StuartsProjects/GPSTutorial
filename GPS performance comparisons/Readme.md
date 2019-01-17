@@ -161,7 +161,7 @@ And the respective plots from U-center were are shown below, GPS 3 is a Ublox6M 
 
 
 
-#### 1 - Ublox 7M GPS
+#### 1 - Ublox 8M GPS
 Often used on quad copters and similar.
 <br><br>
 
@@ -265,7 +265,7 @@ Often used on quad copters and similar.
 
 <br><br>
 
-#### 6H Ubloz MAXM8Q
+#### 6H Ublox MAXM8Q
 The standard HAB GPS perhaps.
 
 * With simple horizontal wire.
@@ -274,6 +274,7 @@ The standard HAB GPS perhaps.
 * Current after fix acquired, 20mA to 25mA
 <br><br>
 
+Breakout board had no connection to Vbackup pin, so could not test hot fix. 
 A second example of the MAXM8Q with horizontal wire antenna was tested, Fix time from cold, 7 min 35 seconds.
 
 ![Picture 1](Pictures/6H.jpg)
@@ -375,15 +376,18 @@ The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
 * Fix time from cold, 122 seconds.
 * Current whilst acquiring fix, 46mA to 56mA.
 * Current after fix acquired, 45mA to 57mA.
-* Total Tracker Power in 24 hours, 10 minute fixes, xxmAhr
-* GPS Power in 24 hours, 10 minute fixes, xxmAhr 
-* Tracker battery life AA Alkalines xx days
+* Total Tracker Power in 24 hours, 10 minute fixes, 72.2mAhr
+* GPS Power in 24 hours, 10 minute fixes, 70mAhr 
+* Tracker battery life AA Alkalines 40 days
 
 
 ![Picture 1](Pictures/11.jpg)
 
 <br><br>
 
+![Picture 1](Pictures/11F.jpg)
+
+<br><br>
 
 
 ## Reducing Tracker node sleep current - a wasteful race to the bottom ?
