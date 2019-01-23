@@ -422,11 +422,11 @@ Its easier to consider the numbers here in terms of uA/Seconds rather than mAhr 
 
 The TPL5110 equipped node (with power down) has a sleep current of 0.1uA so uses 0.1 x 60 x 60 X 24 = 8640uA/Seconds per day during sleep.
 
-At every wakeup it uses 1.512 x 5420 = 8185uA/Seconds per wakeup.
+At every wakeup it uses 1.512 x 5420 = 8195uA/Seconds per wakeup.
 
-There are 144 of these transmissions, so that is 1180086uA/Seconds per day. 
+There are 144 of these transmissions, so that is 1180080uA/Seconds per day. 
 
-So our TPL5110 equipped node uses 8640 + 1180086 = 1188726uA/Seconds per day sleeping and waking up,  or 0.33mAhr per day.
+So our TPL5110 equipped node uses 8640 + 1180080 = 1188720uA/Seconds per day sleeping and waking up,  or 0.33mAhr per day.
 
 
 
@@ -439,14 +439,14 @@ At every wakeup it uses 0.0045 x 5420 = 24.4uA/Seconds per wakeup.
 
 There are 144 of these transmissions, so that is 3513uA/Seconds per day.
 
-So the TPL5010 node uses 129600 + 3513 = 133113uA/Seconds per day sleeping and waking up,  or 0.037mAhr per day. So although the TPL5010 has a higher sleep current over the TPL5110 power down node, it uses less far power. 
+So the TPL5010 node uses 129600 + 3513 = 133113uA/Seconds per day sleeping and waking up,  or 0.037mAhr per day. So although the TPL5010 has a higher sleep current over the TPL5110 power down node, it uses far less power. 
 
 
 
 
 ### Arduino Boot Loader
 
-Of course we don't have to use the Arduino bootloader to load sketches, we can use an ISP programmer although its less convenient. 
+Of course we don't have to use the Arduino boot loader to load sketches, we can use an ISP programmer although its less convenient. 
 
 
 ![Picture 1](Pictures/NoBootloaderPowerUp.jpg)
@@ -466,7 +466,7 @@ One additional advantage capitalises on the Arduinos quick wakeup form deep slee
 
 ### Tracker node sleep current - Conclusion?
 
-Using the TPL5110 to power down node a node (with Arduino serial bootloader) uses 0.33mAhr per day sleeping and waking and the TPL5010 uses far less, 0.037mAhr per day. So they are significant power savings to be had using a bare bones Arduino setup and the TPL5010 as a wakeup timer.  If you remove the Arduino serial boot loader then there is not a lot to choose between the two methods, although the TPL5010 does provide added flexibility. 
+Using the TPL5110 to power down node a node (with Arduino serial boot loader installed) uses 0.33mAhr per day sleeping and waking, the TPL5010 uses far less, 0.037mAhr per day. So they are significant power savings to be had using a bare bones Arduino set-up and the TPL5010 as a wakeup timer.  If you remove the Arduino serial boot loader then there is not a lot to choose between the two methods, although the TPL5010 does provide added flexibility. 
 
 #### To be continued
 <br><br>
