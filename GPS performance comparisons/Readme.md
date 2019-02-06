@@ -406,10 +406,27 @@ The next GPSs to be tested as and when they arrive, I have ordered a UBLOX SAM M
 
 ![Picture 1](Pictures/12.jpg)
 
-
 <br><br>
 
 ![Picture 1](Pictures/12F.jpg)
+<br><br>
+
+####  13 - Quectel L76 with horizontal wire antenna 
+
+* Fix time from cold, 35 seconds
+* Current whilst acquiring fix, 26mA to 40mA.
+* Current after fix acquired, 19mA to 33mA.
+* Total Tracker Power in 24 hours, 10 minute fixes, 20.9mAhr
+* GPS Power in 24 hours, 10 minute fixes, 18.7mAhr 
+* Tracker battery life AA Alkalines 133 days
+
+![Picture 1](Pictures/13.jpg)
+
+
+
+<br><br>
+
+![Picture 1](Pictures/13F.jpg)
 
 
 <br><br>
