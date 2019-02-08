@@ -427,6 +427,18 @@ The next GPSs to be tested as and when they arrive, I have ordered a UBLOX SAM M
 <br><br>
 
 ![Picture 1](Pictures/13F.jpg)
+<br><br>
+####  13 - Quectel L76 - with horizontal wire antenna - 60 second shutdown. 
+
+
+To test the performance that might be typical, I used my DS3231 power controller to shut the tracker down every 60 seconds, this is perhaps typical of the use to expect for a high altitude balloon tracker. The tracker was waking up, waiting for a fix and then transmitting the location with LoRa at a bandwidth of 125Khz and spreading factor of 12. This is approximatly 300bps. 
+
+In 24 hours the tracker consumed 145mAh of battery.
+
+The spread of fixes is shown below. 
+
+
+![Picture 1](Pictures/13F2.jpg)
 
 
 <br><br>
