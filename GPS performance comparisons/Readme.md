@@ -234,6 +234,9 @@ Often used on quad copters and similar.
 
 **GPSs 5,6 and 7** below are typical types for high altitude balloon (HAB) tracking, all 3 have a high altitude mode allowing operation above 18,000M
 
+At the end of the report there are test results for the Quectel L76, this GPS is similar to the L70 but with the addition of multi GNSS support for GPS, GLONASS, BeiDou, Galileo and QZSS.
+
+
 ![Picture 1](Pictures/GPS2A.jpg)
 
 
@@ -411,7 +414,9 @@ The next GPSs to be tested as and when they arrive, I have ordered a UBLOX SAM M
 ![Picture 1](Pictures/12F.jpg)
 <br><br>
 
-####  13 - Quectel L76 with horizontal wire antenna 
+####  13 - Quectel L76 with horizontal wire antenna
+
+The Quectel L76 is a GPS similar to the L70 but with the addition of multi GNSS support for GPS, GLONASS, BeiDou, Galileo and QZSS.
 
 * Fix time from cold, 35 seconds
 * Current whilst acquiring fix, 26mA to 40mA.
@@ -444,15 +449,40 @@ The spread of fixes is shown below.
 <br><br>
 
 
+####  14 - Quectel L86 with ceramic patch antenna
+
+The Quectel L86 is a GPS similar to the L80 but with the addition of multi GNSS support for GPS, GLONASS, BeiDou, Galileo and QZSS.
+
+* Fix time from cold, 48 seconds
+* Current whilst acquiring fix, 30mA to 44mA.
+* Current after fix acquired, 23mA to 37mA.
+* Total Tracker Power in 24 hours, 10 minute fixes, 27.7mAhr
+* GPS Power in 24 hours, 10 minute fixes, 25.2mAhr 
+* Tracker battery life AA Alkalines 102 days
+
+![Picture 1](Pictures/14.jpg)
+
+
+<br><br>
+
+![Picture 1](Pictures/14F.jpg)
+
+
+<br><br>
+
+
+
 ### GPS Performance Tests - Summary 
 
-The outstanding performer so far is the UBLOX SAM M8Q, the results are so good that I had some doubts as to the validity of the test. However the very low average hot fix time is consistent with the mAhr used which is an independent measurement. The received log of GPS fixes looks correct, small variations in location and altitude between GPS fixes. Its not low cost however, around £18. 
+The best performer was the UBLOX SAM M8Q with a battery life of 195 days on AA Alkalines. Its not a low cost GPS however, £18 upwards. 
 
-In the performance tests the Quectel L70 and L80 GPS modules did well and these are very low cost with lower current consumption than average and with a good hot fix performance.
+In the performance tests the Quectel GPSs all did well considering their  very low cost. They had substantially lower power consumption than similar or higher priced UBLOX GPSs.
 
-The bare bones L70 module (i.e. it comes with no antenna) is worthy of note, it's the same size and pin layout as the equivalent UBLOX MAXM8Q module but has a far better signal performance and a very low current consumption. The L70 has a high altitude balloon mode, is easy to find as a bare module and low cost too. I recently bought 5 off for £3.50 each delivered. Under the same signal conditions as the UBLOX MAX M8Q the L70 with a simple wire antenna behaved like a standard GPS with ceramic patch antenna; a cold fix time of 32 seconds whilst the UBLOX MAX M8Q took 5 minutes or more. 
+The Quectel L80 is physically a similar GPS to the SAM M8Q, has a very good performance and at £3.50 is much cheaper than the UBLOX. Its also in a package that makes soldering to a PCB easy. The Quectel L80 perhaps the best compromise GPS.
 
-The Quectel L80 is physically a similar GPS to the SAM M8Q, has a very good performance and at £3.50 is substantially cheaper than the UBLOX equivalent. Its also in a package that makes soldering to a PCB easy.  
+The bare bones L70 module (i.e. it comes with no antenna) is worthy of note, it's the same size and pin layout as the equivalent UBLOX MAXM8Q module but has a far better signal performance and a very low current consumption. The L70 has a high altitude balloon mode, and is easy to find as a bare module. I recently bought 5 off for £3.50 each delivered. Under the same signal conditions as the UBLOX MAX M8Q the L70 with a simple wire antenna behaved like a standard GPS with ceramic patch antenna; a cold fix time of 32 seconds whilst the UBLOX MAX M8Q took 5 minutes or more. 
+
+The Quectel L76 and L86 are pin compatible with the L70 and L80 respectively and whilst they add multi GNNS capability they are slighgtly more expensive and use more power. Both these GPSs have a high altitude balloon mode.   
 
 It should be noted that over a long period hot fix times are in the 10 second average range for most GPSs, this is far more than the often quoted headline figures of 2 - 5 seconds. It can be seen from the graphs that there are occasional fixes that take 30 seconds or more. These long fix times are required to download ephemeris data from new satellites that come into view. The detail of this data is constantly changing so you cannot store it long term.  
 
