@@ -11,9 +11,9 @@ In approximate order this would be my summary of the reasons behind a GPS that '
 5. GPS is faulty
 6. Arduino is faulty
 
-So the first troubleshooting step is to realise that the GPS will probably only work when it's outside with a good view of the sky. It matters little how much you think you want or need the GPS to work indoors, take it outside.  
+So the first troubleshooting step is to realise that the GPS will probably only work when it's outside with a good view of the sky. It matters little how much you think you want or need the GPS to work indoors, that it worked before indoors, or that someone else says it should work indoors; **take it outside !**  
 
-If that does not solve your 'not working GPS' try a simple GPS echo program such as listed below. This reads character from the GPS and sends them to the Arduino IDE serial monitor so you can see what the GPS is up to. Remember to take your GPS outdoors.
+If that does not solve your 'not working GPS' try a simple GPS echo program such as listed below. This reads character from the GPS and sends them to the Arduino IDE serial monitor so you can see what the GPS is up to. **Remember to take your GPS outdoors**.
 
 Arduinos such as the Pro Mini and UNO only have one hardware serial port so you will need to use software serial to read the GPS, using software serial is described first. If you have an Arduino IDE supported device such as Atmega1284P or ATmega2560 then these have two or more hardware serial ports and these should be used instead of software serial, see 'Using Hardware Serial Ports' toward the end of this guide.
 

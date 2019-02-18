@@ -471,6 +471,14 @@ The Quectel L86 is a GPS similar to the L80 but with the addition of multi GNSS 
 <br><br>
 
 
+####  Quectel L76 with Wire versus Ceramic patch antenna
+
+The Quectel L76 has a built in LNA and so should cope well with a simple wire antenna or a small ceramic patch antenna. The fix performance with a wire antenna was tested earlier, but below is the signal performance of the GPS first with a wire antenna (left) and a small 15mm ceramic patch antenna. The ceramic patch antennas are stick on an easy to fix in place on the rear side to the GPS. The Wire antenna provides a bit more signal gain but at 4.75cm long may not be suitable in some applications. The ceramic patch is much more compact yet still give adequate performance.
+
+
+![alt-text-1](Pictures/13_wire.jpg "Wire Antenna") ![alt-text-2](Pictures/13_patch.jpg "patch Antenna")
+
+
 
 ### GPS Performance Tests - Summary 
 
