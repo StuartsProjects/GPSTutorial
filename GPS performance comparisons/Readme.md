@@ -178,7 +178,7 @@ Often used on quad copters and similar.
 
 <br><br>
 
-#### 2 - 8 GPS Ceramic Patch
+#### 2 - UBLOX 7 GPS - Ceramic Patch
 * With 25mm ceramic patch antenna. 
 * Fix time from cold, 35 seconds.
 * Current whilst acquiring fix, 50mA to 54mA.
@@ -478,7 +478,7 @@ The Quectel L76 has a built in LNA and so should cope well with a simple wire an
 
 ![alt-text-1](Pictures/13_wire.jpg "Wire Antenna") ![alt-text-2](Pictures/13_patch.jpg "patch Antenna")
 
-
+<br><br>
 
 ### GPS Performance Tests - Summary 
 
@@ -490,13 +490,16 @@ The Quectel L80 is physically a similar GPS to the SAM M8Q, has a very good perf
 
 The bare bones L70 module (i.e. it comes with no antenna) is worthy of note, it's the same size and pin layout as the equivalent UBLOX MAXM8Q module but has a far better signal performance and a very low current consumption. The L70 has a high altitude balloon mode, and is easy to find as a bare module. I recently bought 5 off for £3.50 each delivered. Under the same signal conditions as the UBLOX MAX M8Q the L70 with a simple wire antenna behaved like a standard GPS with ceramic patch antenna; a cold fix time of 32 seconds whilst the UBLOX MAX M8Q took 5 minutes or more. 
 
-The Quectel L76 and L86 are pin compatible with the L70 and L80 respectively and whilst they add multi GNNS capability they are slighgtly more expensive and use more power. Both these GPSs have a high altitude balloon mode.   
+The Quectel L76 and L86 are pin compatible with the L70 and L80 respectively and whilst they add multi GNNS capability they are slightly more expensive and use more power. Both these GPSs have a high altitude balloon mode.   
 
 It should be noted that over a long period hot fix times are in the 10 second average range for most GPSs, this is far more than the often quoted headline figures of 2 - 5 seconds. It can be seen from the graphs that there are occasional fixes that take 30 seconds or more. These long fix times are required to download ephemeris data from new satellites that come into view. The detail of this data is constantly changing so you cannot store it long term.  
 
 It also need to be appreciated just how much power a GPS based project actually uses. Even for the low power UBLOX SAM8Q and Quectels, the GPS was consuming more than 85% of the projects power, the rest being used for the LoRa transmissions. 
 
 With the GPS consuming so much of a projects current it is clear that the trackers sleep current is of very little consequence, even at a 'high' level of 5uA, which is easy to achieve with standard Arduino parts, the sleep current is only 1% of the total project current.   
+
+This report notes the importance of having access to the Vbackup pin on the GPS for long term tracker use. There is one GPS module available that provides access to this pin, the [Adafruit Ultimate GPS](https://www.adafruit.com/product/746). I have not tested this GPS, cost is £37, but it should have a similar performance to no. 9 in this report.
+
 
 <br><br>
 
