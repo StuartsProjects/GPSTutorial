@@ -182,14 +182,14 @@ Do check that the Arduino GPS library you are using supports the $GNRMC and $GNG
 
 Its a fact of life that GPSs consume a lot of power and this can be an issue if extended long term operation from small batteries is required, so for a portable GPS tracker. As an example I measured the current consumption of some different GPS as they are acquiring their first fix. When the GPS does get a fix the running current consumption can drop to about half the values shown (on average) but for the purposes of comparison the fist fix current is shown, If the software standby\backup current of the GPS is known it is in brackets. 
 
-UBLOX NEO 6M Bare module 60mA - 63mA (56uA)
-UBLOX NEO 6M Breakout board 57mA - 70mA (7mA)
-Beitian BN220 (UbloxM8) Breakout 52mA - 58mA (7.5mA)
-UBLOX 8 Breakout (?) 49mA - 58mA
-UBLOX 8N Breakout (?) 46mA - 52mA 
-UBLOX MAX8Q Bare module 25mA - 27mA (19uA)
-GlobalTop PA6H 21mA - 23mA
-Quectel L80 18 - 20mA (1mA)
+    UBLOX NEO 6M Bare module 60mA - 63mA (56uA)
+    UBLOX NEO 6M Breakout board 57mA - 70mA (7mA)
+    Beitian BN220 (UbloxM8) Breakout 52mA - 58mA (7.5mA)
+    UBLOX 8 Breakout (?) 49mA - 58mA
+    UBLOX 8N Breakout (?) 46mA - 52mA 
+    UBLOX MAX8Q Bare module 25mA - 27mA (19uA)
+    GlobalTop PA6H 21mA - 23mA
+    Quectel L80 18 - 20mA (1mA)
 
 
 To use the UBLOX NEO 6M as an example, and they are popular and quite cheap on eBay, then at average 60mA if run continuously in a tracker powered by AA Alkalines, the batteries would only last about 48 hours, and that is just running the GPS.
@@ -202,6 +202,11 @@ However the satellites the GPS receiver can see are moving across the sky and fr
 
 By adding up all the fix times over 24 hours I was able to calculate how much power the one GPS was using in one day, this was around 17mAhr per day, quite an improvement over the 432mAhr that would be used if the GPS was powered on all the time. 
 
+##Myth Buster
+
+I have lost count of the number of times I have seen it said that a new GPS can take up to 10minutes, 20minutes, 2 hours etc to get its first fix. This is nonsense. A factory fresh GPS from cold, with a good view of the sky will get a first fix in somewhere between 35 and 45 seconds on average. If the GPS takes longer than this for a first fix, it or it's antenna are faulty. I certainly have seen GPSs take longer than a minute to get a fix and in every case you can see weak or very weak signals reported in the GPVTG sentence. Weak signals have one cause, a poor location, a faulty GPS or a poor antenna.   
+
+<br><br>
 
 ## Stuart Robinson
 ## www.LoRaTracker.uk
