@@ -41,7 +41,7 @@ Modern GPSs should when connected to a decent working antenna get a fix from col
 
 ### GPS Backup Performance
 
-As the GPS will normally get a fix from cold in 30 – 60 seconds when it has a good view of the sky, we dont want to run it from cold every time we need a location fix. Fortunately nnce the GPS has downloaded enough information on the GPS satellites the main GPS power can be turned off and as long as a voltage is supplied to the GPS backup pin the GPS will retain the satellite information in GPS memory. When the GPS power is then turned back on the GPS can acquire an updated fix in as little as 1 – 5 seconds, this is called ‘hot fixing’.
+As the GPS will normally get a fix from cold in 30 – 60 seconds when it has a good view of the sky, we don't want to run it from cold every time we need a location fix. Fortunately once the GPS has downloaded enough information on the GPS satellites the main GPS power can be turned off and as long as a voltage is supplied to the GPS backup pin the GPS will retain the satellite information in GPS memory. When the GPS power is then turned back on the GPS can acquire an updated fix in as little as 1 – 5 seconds, this is called ‘hot fixing’.
 
 In backup mode the GPS may consume only 5uA to 20uA, so clearly there are significant power savings to be had if we only want intermittent fixes from the GPS. A GPS that only needs to run for a few seconds to get an updated fix every 10 minutes or longer will use a lot less power that an GPS that is left running all the time.
 
@@ -61,13 +61,13 @@ There is a web site which is an on-line super capacitor charge and discharge cal
 
 [Super Capacitor Calculator](https://www.maximintegrated.com/en/design/tools/calculators/product-design/supercap.cfm)
 
-First lets see what size of super capacitor we need. Assume a maximum backup time of one day, a fully charged voltage of 3.0V and a minimum volts for GPS backup of 1.5V, a  GPSs backup current of 15uA which is  typical for a UBLOX GPS for instance. The calculator suggests a capacitor of 1Farad would last a couple of hours longer than one day.
+First lets see what size of super capacitor we need. Assume a maximum backup time of one day, a fully charged voltage of 3.0V and a minimum volts for GPS backup of 1.5V, a  GPSs backup current of 15uA which is  typical for a UBLOX GPS for instance. The calculator suggests a capacitor of 1 Farad would last a couple of hours longer than one day.
 
 If the hot fix gap was 10 minutes and the hot fix takes 5 seconds with a GPS backup current of 15uA, then assuming no charge\discharge efficiency losses the charge current needs to be 600/5 times the backup current or 1.8mA. That’s manageable.
 
 So if we are to use a 1F super capacitor how big would it be ?
 
-Checking on the Farnell web site a 1Farad 3.6V super capacitor would be around 20mm in diameter, perhaps a bit more and 5mm high. That’s really quite big, see picture for the size of a 5.5V version of 1F capacitor. The GPS shown is one of the larger 25mm ceramic patch antenna types.
+Checking on the Farnell web site a 1 Farad 3.6V super capacitor would be around 20mm in diameter, perhaps a bit more and 5mm high. That’s really quite big, see picture for the size of a 5.5V version of 1F capacitor. The GPS shown is one of the larger 25mm ceramic patch antenna types.
 
 
 ![Picture 1](Pictures/GPSandSuperCapacitor.jpg)
@@ -83,7 +83,7 @@ So if a super capacitor is too big to be practical and we have already dismissed
 
 So if we don’t use a a super capacitor or a small lithium rechargeable, then what is the alternative ?
 
-We could of course use a non-recharegeable lithium battery such as a CR1216 but in the holders these have much the same issue as the super capacitor, they are physically large, see picture.
+We could of course use a non-chargeable lithium battery such as a CR1216 but in the holders these have much the same issue as the super capacitor, they are physically large, see picture.
 
 ![Picture 1](Pictures/GPSandBattery.jpg)
 
@@ -139,7 +139,7 @@ The Arduino receiver software was written for the Pro Mini based LCD receiver of
 
 ### GPS Performance Tests - Report Format
 
-The GPS's were initially tested for signal performance and fix time in 3 batches. Below the testing of each batch is reported starting with a picture of the GPSs. The GPS is named and the information presented in this order, Fix time from cold, current consumption whilst acquiring fix, current consumption after fix, total tracker power used in 24 hours, GPS mAhr used in 24 hours, battery life for a pack of AA Alkalines. To calculate the power just used by the GPS the consumed by the tracker with no GPS was measured. The total up time was 2.91 seconds with a power consumption of 7.2mA when idle and 44mA when transmitting. The transmit time was 0.925 seconds, this equates to 0.0917 mAhr per hour or 2.2mAhr per day. With that figure known it was possible to subtract the figure from the total measured mAhr when the transmissions and GPS were in use in order to isolate the GPS only figure.     
+The GPSs were initially tested for signal performance and fix time in 3 batches. Below the testing of each batch is reported starting with a picture of the GPSs. The GPS is named and the information presented in this order, Fix time from cold, current consumption whilst acquiring fix, current consumption after fix, total tracker power used in 24 hours, GPS mAhr used in 24 hours, battery life for a pack of AA Alkalines. To calculate the power just used by the GPS the consumed by the tracker with no GPS was measured. The total up time was 2.91 seconds with a power consumption of 7.2mA when idle and 44mA when transmitting. The transmit time was 0.925 seconds, this equates to 0.0917 mAhr per hour or 2.2mAhr per day. With that figure known it was possible to subtract the figure from the total measured mAhr when the transmissions and GPS were in use in order to isolate the GPS only figure.     
 
 The GPS signal graph is then shown for the GPS, note that green bars mean the satellite is available for fix information blue means it is not.  At the bottom of the bar is the signal strength, and below that the satellite number. 
 
@@ -268,16 +268,16 @@ At the end of the report there are test results for the Quectel L76, this GPS is
 <br><br>
 
 #### 6H UBLOX MAXM8Q
-The standard HAB GPS perhaps.
+The standard high altitude balloon (HAB) GPS perhaps.
 
 * With simple horizontal wire.
-* Fix time from cold, 5 min 46 seconds.
+* Fix time from cold, 5 minutes 46 seconds.
 * Current whilst acquiring fix, 22mA to 28mA
 * Current after fix acquired, 20mA to 25mA
 <br><br>
 
 Breakout board had no connection to Vbackup pin, so could not test hot fix. 
-A second example of the MAXM8Q with horizontal wire antenna was tested, Fix time from cold, 7 min 35 seconds.
+A second example of the MAXM8Q with horizontal wire antenna was tested, Fix time from cold, 7 minutes 35 seconds.
 
 ![Picture 1](Pictures/6H.jpg)
 <br><br>
@@ -312,7 +312,7 @@ A second example of the MAXM8Q with horizontal wire antenna was tested, Fix time
 <br><br>
 <br><br>
 
-The next 4 GPS tested are pictured below, no8 is a Quectel L80 module.
+The next 4 GPS tested are pictured below, No8 is a Quectel L80 module.
 
 
 ![Picture 1](Pictures/GPS3A.jpg)
@@ -436,7 +436,7 @@ The Quectel L76 is a GPS similar to the L70 but with the addition of multi GNSS 
 ####  13 - Quectel L76 - with horizontal wire antenna - 60 second shutdown. 
 
 
-To test the performance that might be typical, I used my DS3231 power controller to shut the tracker down every 60 seconds, this is perhaps typical of the use to expect for a high altitude balloon tracker. The tracker was waking up, waiting for a fix and then transmitting the location with LoRa at a bandwidth of 125Khz and spreading factor of 12. This is approximatly 300bps. 
+To test the performance of the L76 that might be typical of a high altitude balloon tracker, I used my DS3231 power controller to shut the tracker down every 60 seconds. The tracker was waking up, waiting for a fix and then transmitting the location with LoRa at a bandwidth of 125Khz and spreading factor of 12. This is approximately 300bps. 
 
 In 24 hours the tracker consumed 145mAh of battery.
 
@@ -490,7 +490,7 @@ The Quectel L80 is physically a similar GPS to the SAM M8Q, has a very good perf
 
 The bare bones L70 module (i.e. it comes with no antenna) is worthy of note, it's the same size and pin layout as the equivalent UBLOX MAXM8Q module but has a far better signal performance and a very low current consumption. The L70 has a high altitude balloon mode, and is easy to find as a bare module. I recently bought 5 off for £3.50 each delivered. Under the same signal conditions as the UBLOX MAX M8Q the L70 with a simple wire antenna behaved like a standard GPS with ceramic patch antenna; a cold fix time of 32 seconds whilst the UBLOX MAX M8Q took 5 minutes or more. 
 
-The Quectel L76 and L86 are pin compatible with the L70 and L80 respectively and whilst they add multi GNNS capability they are slightly more expensive and use more power. Both these GPSs have a high altitude balloon mode.   
+The Quectel L76 and L86 are pin compatible with the L70 and L80 respectively and whilst they add multi GNSS capability they are slightly more expensive and use more power. Both these GPSs have a high altitude balloon mode.   
 
 It should be noted that over a long period hot fix times are in the 10 second average range for most GPSs, this is far more than the often quoted headline figures of 2 - 5 seconds. It can be seen from the graphs that there are occasional fixes that take 30 seconds or more. These long fix times are required to download ephemeris data from new satellites that come into view. The detail of this data is constantly changing so you cannot store it long term.  
 
@@ -508,11 +508,11 @@ This report notes the importance of having access to the Vbackup pin on the GPS 
 ## Reducing Tracker node sleep current - a wasteful race to the bottom ?
 
 
-There is quite a lot of significance being attached to reducing the sleep current of LoRa projects or nodes to extremely low levels, the lower the better apparently, but is sleep current alone a significant factor ? 
+There is quite a lot of significance being attached to reducing the sleep current of LoRa IOT type projects or nodes to extremely low levels, the lower the better apparently, but is sleep current alone a significant factor ? 
 
-A bare bones ATmgea328P or 1284P based node with a LoRa module can be used in normal deep sleep mode and the sleep current is around 0.2uA, you can wake up from an external interrupt. Add a regulator such as MCP1700 if you need one, and total sleep current is around 1.5uA with a TPL5010 acting as a watchdog and interrupt wake up device.
+A bare bones ATMega328P or 1284P based node with a LoRa module can be used in normal deep sleep mode and the sleep current is around 0.2uA, you can wake up from an external interrupt. Add a regulator such as MCP1700 if you need one, and total sleep current is around 1.5uA with a TPL5010 acting as a watchdog and interrupt wake up device.
 
-A popular alternative to the processor deep sleep approach appears to be to use the TPL5110 device to completely power down a node, in periods from seconds to 2 hours. This set-up has a deep sleep current of less than 0.1uA. This appears to be a significant improvement on the 1.5uA of a bare bones ATmega328 in deep sleep mode, or is it ? Is concentrating or being obsessed with the deep sleep current the best way of reducing overall power consumption  ?
+A popular alternative to the processor deep sleep approach appears to be to use the TPL5110 device to completely power down a node, in periods from seconds to 2 hours. This set-up has a deep sleep current of less than 0.1uA. This appears to be a significant improvement on the 1.5uA of a bare bones ATMega328P in deep sleep mode, or is it ? Is concentrating or being obsessed with the deep sleep current the best way of reducing overall power consumption  ?
 
 Take a look at the scope plot below, it shows (top trace) the power to a The Thing Network (TTN) GPS tracker node based on an Arduino 8Mhz Pro Mini being turned on. The lower trace shows a logic pin being sent high at the point the tracker node software queued the packet ready to send, so the difference is the node wakeup time. The delay from power on to ready to send the packet was 1512mS, mainly caused by the Arduino boot loader delay. Power consumption during this 1512mS was 5.42mA.  
 
@@ -574,7 +574,7 @@ Here the delay between power applied and ready to send a packet is much less; 12
 
 The TPL5010 can act as a watchdog device, if you don't respond to the periodic interrupt in a timely fashion then there will be a reset of the processor, which is useful protection against software crashes or power supply induced errors. 
 
-One additional advantage capitalises on the Arduinos quick wakeup form deep sleep. At 4.5mS it becomes feasible to set the TPL5010 to say a one minute interrupt wakeup and then count the interrupts to get in effect a programmable wakeup time. A simple loop counting 10 of the interrupt wake ups then gets you a 10 minute wakeup, without the need to change the TPL5010 timing resistor. 
+One additional advantage capitalises on the Arduinos quick wakeup from deep sleep. At 4.5mS it becomes feasible to set the TPL5010 to say a one minute interrupt wakeup and then count the interrupts to get in effect a programmable wakeup time. A simple loop counting 10 of the interrupt wake ups then gets you a 10 minute wakeup, without the need to change the TPL5010 timing resistor. 
 
 
 
@@ -582,9 +582,9 @@ One additional advantage capitalises on the Arduinos quick wakeup form deep slee
 
 Using the TPL5110 to power down node a node (with Arduino serial boot loader installed) does give you a very low headline grabbing sleep current of maybe 0.1uA or even less but because of the extended wakeup times this can equate to 0.33mAhr per day sleeping and waking. 
 
-With the processor powered in deep sleep using a TPL5010 as an interrupt wakeup timer use far less, 0.037mAhr per day, simply because the startups are very much quicker. So they are significant power savings to be had using a bare bones Arduino set-up and the TPL5010 as a wakeup timer.  If you remove the Arduino serial boot loader then there is not a lot to choose between the two methods, although the TPL5010 does provide added flexibility. 
+With the processor powered in deep sleep using a TPL5010 as an interrupt wakeup timer use far less, 0.037mAhr per day, simply because the start-ups are very much quicker. So they are significant power savings to be had using a bare bones Arduino set-up and the TPL5010 as a wakeup timer.  If you remove the Arduino serial boot loader then there is not a lot to choose between the two methods, although the TPL5010 does provide added flexibility. 
 
-There is a far more flexible option than the TPL5110 approach, you can build a bare bones ATMega based tracker with LoRa device and use a DS3231 real time clock as a wakeup timer, this provides programmable wakeup times from seconds to one month. You also have the benefit of an accurate real time clock on the tracker. A prototype tracker setup this way running from a single LifePO4 (3.6V) battery has a sleep current of 0.9uA. 
+There is a far more flexible option than the TPL5110 approach, you can build a bare bones ATMega based tracker with LoRa device and use a DS3231 real time clock as a wakeup timer, this provides programmable wakeup times from seconds to one month. You also have the benefit of an accurate real time clock on the tracker. A prototype tracker set-up this way running from a single LifePO4 (3.6V) battery has a sleep current of 0.9uA. 
 
 
 

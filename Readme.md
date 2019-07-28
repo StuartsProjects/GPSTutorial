@@ -113,7 +113,7 @@ The next thing that should happen is that the GPS starts reporting the time, 11:
 Within a minute or so most GPS with decent antennas and a good view of the sky should then start reporting the position, the content of the position sentences $GPRMC and $GPGGA should look something like this;
     
     $GPRMC,111218.00,A,5133.58788,N,00313.12853,W,0.205,,261018,,,A*61
-    $GNGGA,111218.00,5133.58788,N,00313.12853,W,1,06,1.36,241.1,M,49.4,M,,*55
+    $GPGGA,111218.00,5133.58788,N,00313.12853,W,1,06,1.36,241.1,M,49.4,M,,*55
 
 
 Some GPS, particularly the types used in high altitude ballooning that have small ceramic stick antennas or a simple wire, can take 5 minutes or more getting a fix. I often see it claimed that (presumably a good) GPS can take many minutes, 15+, to acquire the first fix. I have seen this numerous times myself and its always been on a GPS with a poor antenna or in a poor location. It is rare in my experience for a modern GPS with a good working antenna to take more than one minute to get a fix under good conditions (outside with a clear view of the sky) and most often its around 45 seconds or less when started from cold, the best ones can get a fix in 30 seconds or so from cold. If your GPS takes longer than a minute to get a fix under good conditions then assume the GPS or its antenna is faulty. 
