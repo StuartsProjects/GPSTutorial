@@ -131,6 +131,10 @@ If the serial monitor is blank then either you have a faulty GPS or its connecte
 
 If the characters you see on the serial monitor are garbage, then it likely you have the GPS baud rate wrong. Check the documentation for your GPS. 
 
+## GPS LED indicators
+
+Some, but not all GPSs have indicator LEDs that can tell you how the GPSs is  performing. These LEDs are often connected to the 1PPS (one pulse per second) output of the GPS which will normally flash when the GPS has a valid time sync. The LED flashing will often be at around the same time that the GPS gets a position fix. However it is possible for the GPS to have a valid time sync (and flashing LED) but have no position fix. 
+
 
 ## Using Hardware Serial Ports
 If you have an Arduino with additional hardware serial ports such as the ATmega1284P or ATmega 2560 you should use the hardware serial ports for the GPS, the echo code is here;
@@ -161,7 +165,7 @@ If you have an Arduino with additional hardware serial ports such as the ATmega1
      Serial.begin(Serial_Monitor_Baud);   //setup Serial monitor ouput
      GPSserial.begin(GPSBaud);            //start Hardware for GPS at defined baud rate
     
-**Note:** You should change the **#define GPSserial Serial1** line to indicate the hardware serial port you want to use, Serial1, Serial2 or Serial3.     
+**Note:** You should change the **#define GPSserial Serial1** line to indicate the hardware serial port you want to use such as, Serial1, Serial2 or Serial3, depending on the Arduino you have.    
 
 <br><br>
 ## Note on Ublox GPSs
