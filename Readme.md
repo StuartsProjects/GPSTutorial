@@ -71,7 +71,7 @@ On a UNO, ProMicro or ATMega1284P you can use any available pins apart from 0 an
     }
     
 <br><br>
-This first printout below is what the GPS output will typically look like for a GPS that has just been turned on, but see the heading 'No GPS Characters' below if you don't see this sort of printout;
+This first printout below is what the GPS output will typically look like for a GPS that has just been turned on, remember to configure the Arduino IDE Serial Monitor baud rate to 115200. See the heading 'No GPS Characters' below if you don't see this sort of printout;
 
     
     $GPTXT,01,01,02,u-blox ag - www.u-blox.com*50
@@ -127,7 +127,7 @@ Then it's either got a poor view of the sky, has a poor antenna or is faulty. Th
 
 ## No GPS Characters
 
-If the serial monitor is blank then either you have a faulty GPS or its connected wrong, its also possible the GPS baud rate is wrong. Reversing the GPSRX and GPSTX pins can be tried, I have not known this damage a GPS, but no guarantees. 
+If the serial monitor is blank or displays random characters then either you have a faulty GPS, its connected wrong or the GPS or Serial Monitor baud rate is wrong. Reversing the GPSRX and GPSTX pins can be tried, I have not known this damage a GPS, but no guarantees. 
 
 If the characters you see on the serial monitor are garbage, then it likely you have the GPS baud rate wrong. Check the documentation for your GPS. 
 
@@ -213,6 +213,5 @@ I have lost count of the number of times I have seen it said that a new GPS can 
 <br><br>
 
 ## Stuart Robinson
-## www.LoRaTracker.uk
 ## October 2018
  

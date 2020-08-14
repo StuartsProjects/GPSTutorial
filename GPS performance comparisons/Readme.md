@@ -594,6 +594,5 @@ There is a far more flexible option than the TPL5110 approach, you can build a b
 
 
 ## Stuart Robinson
-## www.LoRaTracker.uk
 ## January 2019
  
