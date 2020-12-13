@@ -1,6 +1,6 @@
 # GPS Tutorial 
 
-On public forums, such as Arduino, I see a great many posts along the lines of 'My GPS does not work'. Most often constructors connect a GPS to an Arduino,  load up a complete application and find it does not work, there is no GPS location reported. Sometimes they do the sensible thing and load one of the simple examples that comes with an Arduino library, but still they find their GPS 'does not work'
+On public forums, such as Arduino, I see a great many posts along the lines of 'My GPS does not work'. Most often constructors connect a GPS to an Arduino,  load up a complete application and find it does not work, there is no GPS location reported. Sometimes they do the sensible thing and load one of the simple examples that comes with an Arduino library, but still they find their GPS 'does not work'.
 
 In approximate order this would be my summary of the reasons behind a GPS that 'does not work'
 
